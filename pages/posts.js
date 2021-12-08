@@ -22,26 +22,31 @@ export default function Post({ allPostsData }) {
           <title>Artikel Computer Club</title>
         </Head>
 
-        <section id="hero-cc" className="hero-cc bg-light">
+        <section id="article-cc" className="article-cc bg-light">
           <div className="container">
+
             {allPostsData.map(({ id, date, title, description, author }) => (
-              <div className="shadow-sm col-md-10 offset-md-1 p-5" key="id">
+              <div className="shadow-sm p-3 mb-3 rounded col-md-8 offset-md-2 p-3 box-article" key="id">
                 <h1 className="fw-bold text-capitalize" data-aos="fade-up" data-aos-delay="200">
                   <Link href={`/posts/${id}`}>
                     <a className="text-decoration-none">{title}</a>
                   </Link>
                 </h1>
+
                 <span className="font-weight-light">
-                  <Date dateString={date} />
+                  <i className="date-posted"><Date dateString={date} /> </i>
+                  <i className="author-text">- Oleh {author} </i>
                 </span> <br />
+                
                 <p className="text-secondary mt-2" data-aos="fade-up" data-aos-delay="300">
                   {description}
                 </p>
                 <span className="font-weight-light fs-6">
-                  <i>Oleh {author} </i>
+
                 </span>
               </div>
             ))}
+
           </div>
         </section>
       </Layout>

@@ -11528,4 +11528,88 @@ body {
   line-height: 32px;
 }
 
+.article-cc {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+@media (max-width: 991.98px) {
+  .article-cc {
+    text-align: justify;
+  }
+}
+@media (min-width: 1200px) {
+  .article-cc {
+    padding-top: 125px;
+  }
+}
+@media (min-width: 1400px) {
+  .article-cc {
+    padding-top: 136px;
+    padding-bottom: 80px;
+  }
+}
+.article-cc h5, .article-cc .h5, .article-cc p {
+  font-size: 1rem;
+  line-height: 20px;
+}
+@media (min-width: 1400px) {
+  .article-cc h5, .article-cc .h5, .article-cc p {
+    font-size: 1.125rem;
+    line-height: 23px;
+  }
+}
+.article-cc h5, .article-cc .h5 {
+  margin-bottom: 10px;
+}
+.article-cc h1, .article-cc .h1 {
+  font-size: calc(1.325rem + 0.9vw);
+  line-height: 42px;
+}
+@media (min-width: 1200px) {
+  .article-cc h1, .article-cc .h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .article-cc h1, .article-cc .h1 {
+    font-size: calc(1.35rem + 1.2vw);
+    line-height: 48px;
+  }
+}
+@media (min-width: 1200px) and (min-width: 1200px) {
+  .article-cc h1, .article-cc .h1 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1400px) {
+  .article-cc h1, .article-cc .h1 {
+    line-height: 55px;
+  }
+}
+.article-cc p {
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+@media (min-width: 1400px) {
+  .article-cc p {
+    max-width: 450px;
+    margin-bottom: 20px;
+    line-height: 32px;
+  }
+}
+.article-cc .author-text {
+  font-weight: 200;
+  font-size: small;
+}
+.article-cc .date-posted {
+  font-weight: 200;
+  font-size: small;
+}
+.article-cc .box-article:hover {
+  border: 0.4px solid #294470;
+}
+.article-cc h1:hover, .article-cc .h1:hover {
+  color: #1C2E4A;
+}
+
 /*# sourceMappingURL=style.css.map */
