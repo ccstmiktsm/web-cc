@@ -1,0 +1,35 @@
+:root {
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    color: $dark;
+}
+
+.title-section {
+    p {
+        color: $success;
+        line-height: 21px;
+        margin-bottom: 8px;
+        
+        @include media-breakpoint-up(xl) {
+            @include font-size(18px);
+            margin-bottom: 12px;
+        }
+    }
+    
+    h3 {
+        @include font-size(24px);
+        line-height: 38px;
+        margin-bottom: 38px;
+        
+        @include media-breakpoint-up(xl) {
+            @include font-size(28px);
+        }
+    }
+    
+    p,h3 {
+        font-weight: 700;
+    }
+}

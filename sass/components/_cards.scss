@@ -1,0 +1,62 @@
+.card {
+    &.card-shadow-cc {
+        border-radius: 15px;
+        border-color: transparent;
+        box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+
+        .card-body {
+            box-sizing: border-box;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            
+            @include media-breakpoint-up(xl) {
+                padding: 40px 30px;
+            }
+            
+            @include media-breakpoint-up(xxl) {
+                padding: 50px 40px;
+            }
+
+            .card-title {
+                @include font-size(20px);
+                line-height: 42px;
+                font-weight: 700;
+                
+                @include media-breakpoint-up(xl) {
+                    line-height: 56px;
+                    @include font-size(24px);
+                }
+            }
+
+            .card-text {
+                line-height: 28px;
+                color: $primary-50;
+            }
+        }
+    }
+
+    &.card-article {
+        .card-img-top {
+            margin: 20px;
+            width: auto;
+        }
+
+        .card-body {
+            padding: 4px 33px 33px 33px;
+
+            .card-title {
+                line-height: 32px;
+                margin-bottom: 14px;
+
+                @include media-breakpoint-up(xl) {
+                    @include font-size(20px);
+                }
+
+                @include media-breakpoint-up(xxl) {
+                    line-height: 34px;
+                    @include font-size(22px);
+                }
+            }
+        }
+    }
+}

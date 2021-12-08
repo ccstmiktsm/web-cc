@@ -1,0 +1,41 @@
+.header-cc {
+    transition: .3s;
+
+    @include media-breakpoint-down(lg) {
+        background-color: $light;
+    }
+
+    @include media-breakpoint-up(lg) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    
+    &.active {
+        box-shadow: 0 1px 10px rgb(168 173 191 / 22%);
+    }
+
+    .navbar-toggler {
+        @include reset-shadow();
+    }
+
+    .nav-item {
+        .nav-link {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+    
+            &.active {
+                font-weight: 700;
+                color: $dark;
+            }
+        }
+
+        &:last-child {
+            .nav-link {
+                padding-right: 0 !important;
+            }
+        }
+    }
+}

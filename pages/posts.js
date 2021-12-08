@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 import Layout from '../components/Layout'
 import { getSortedPostsData } from '../lib/posts'
 import Date from '../components/date'
@@ -21,24 +21,29 @@ export default function Post({ allPostsData }) {
         <Head>
           <title>Artikel Computer Club</title>
         </Head>
-        <div className="container">
-          <h2 className="mt-3">Postingan Terbaru</h2>
-            {allPostsData.map(({ id, date, title, description }) => (
-              <div className="shadow-sm col-md-8 p-3 mb-5 bg-white rounded" key="id">
-                <h4>
+
+        <section id="hero-cc" className="hero-cc bg-light">
+          <div className="container">
+            {allPostsData.map(({ id, date, title, description, author }) => (
+              <div className="shadow-sm col-md-10 offset-md-1 p-5" key="id">
+                <h1 className="fw-bold text-capitalize" data-aos="fade-up" data-aos-delay="200">
                   <Link href={`/posts/${id}`}>
-                    <a>{title}</a>
+                    <a className="text-decoration-none">{title}</a>
                   </Link>
-                </h4>
+                </h1>
                 <span className="font-weight-light">
-                  <Date dateString={date}/>
-                </span> <br/>
-                <p className="mt-2">
+                  <Date dateString={date} />
+                </span> <br />
+                <p className="text-secondary mt-2" data-aos="fade-up" data-aos-delay="300">
                   {description}
                 </p>
+                <span className="font-weight-light fs-6">
+                  <i>Oleh {author} </i>
+                </span>
               </div>
             ))}
-        </div>
+          </div>
+        </section>
       </Layout>
     </>
   )
