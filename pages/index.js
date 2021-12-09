@@ -4,6 +4,17 @@ import Link from "next/link"
 import Image from 'next/image'
 import FsLightbox from "fslightbox-react"
 import React, { useState } from 'react';
+import { getThreeSortedPostsData } from '../lib/posts'
+import Date from '../components/date'
+
+export async function getStaticProps() {
+    const onlyThreePostData = getThreeSortedPostsData()
+    return {
+        props: {
+            onlyThreePostData
+        }
+    }
+}
 
 const imageSources = [
     '/images/galeri/1.jpg',
@@ -14,7 +25,7 @@ const imageSources = [
     '/images/galeri/18.jpg',
 ];
 
-export default function Home() {
+export default function Home({onlyThreePostData}) {
     const [lightboxController, setLightboxController] = useState({
         toggler: false,
         sourceIndex: 0
@@ -32,6 +43,7 @@ export default function Home() {
             <Layout home>
                 <Head>
                     <title>Home - Computer CLub STMIK Tasikmalayass</title>
+                    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
                 </Head>
 
                 <section id="hero-cc" className="hero-cc bg-light">
@@ -387,60 +399,24 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="row g-4">
-                            <div className="col-12 col-md-6 col-xl-4">
-                                <div className="card card-article card-shadow-cc" data-aos="fade-up" data-aos-delay="200">
-                                    <div className="card-img-top img-fluid rounded">
-                                        <Image
-                                            src="/images/berita/1.jpg"
-                                            alt="CCPasif A zam zam bekerja di ruang guru"
-                                            width={350}
-                                            height={240}
-                                        />
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title text-capitalize">CCPasif A zam zam bekerja di ruang guru</h5>
-                                        <p className="card-text">Mencari ide serta menentukan target untuk pertumbuhan
-                                            bisnis yang sedang dan akan dikembangkan.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4">
-                                <div className="card card-article card-shadow-cc" data-aos="fade-up" data-aos-delay="300">
-                                    <div className="card-img-top img-fluid rounded">
-                                        <Image
-                                            src="/images/berita/2.jpg"
-                                            alt="CCPasif A Arsaludin meraih nilai kerja praktek
-                                        tertinggi"
-                                            width={350}
-                                            height={240}
-                                        />
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title text-capitalize">CCPasif A Arsaludin meraih nilai kerja praktek
-                                            tertinggi</h5>
-                                        <p className="card-text">Mencari ide serta menentukan target untuk pertumbuhan
-                                            bisnis yang sedang dan akan dikembangkan.</p>
+                            {onlyThreePostData.map(({ id, date, title, description, author, thumbnail }) => (
+                                <div className="col-12 col-md-6 col-xl-4" key="id">
+                                    <div className="card card-article card-shadow-cc" data-aos="fade-up" data-aos-delay="200">
+                                        <div className="card-img-top img-fluid rounded">
+                                            <Image
+                                                src={thumbnail}
+                                                alt="CCPasif A zam zam bekerja di ruang guru"
+                                                width={350}
+                                                height={240}
+                                            />
+                                        </div>
+                                        <div className="card-body">
+                                            <h5 className="card-title text-capitalize">{title}</h5>
+                                            <p className="card-text">{description}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4">
-                                <div className="card card-article card-shadow-cc" data-aos="fade-up" data-aos-delay="400">
-                                    <div className="card-img-top img-fluid rounded">
-                                        <Image
-                                            src="/images/berita/3.jpg"
-                                            alt="CCPasif A Arsaludin meraih nilai kerja praktek
-                                        tertinggi"
-                                            width={350}
-                                            height={240}
-                                        />
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title text-capitalize">CCPasif Teh Dhini terobos kampus merdeka maga...</h5>
-                                        <p className="card-text">Mencari ide serta menentukan target untuk pertumbuhan
-                                            bisnis yang sedang dan akan dikembangkan.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="row mt-5">
                             <div className="col-12 text-center">

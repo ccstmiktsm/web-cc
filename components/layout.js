@@ -6,6 +6,7 @@ export default function Layout({children, home}) {
     return (
         <html>
             <body>
+                
                 {home ? (
                     <>
                         <Navbar/>

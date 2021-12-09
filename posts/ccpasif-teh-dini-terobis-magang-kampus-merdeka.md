@@ -1,9 +1,9 @@
 ---
-title: 'CCPasif A Arsaludin Meraih Nilai Kerja Praktek Tertinggi'
+title: 'CCPasif Teh Dini Tembus Magang Kampus Merdeka'
 description: 'Software engineer adalah seseorang yang mampu memberikan solusi melalui teknologi software yang dapat dipelihara'
-date: '2021-10-07'
+date: '2021-07-07'
 author: 'Diki Hamdani'
-thumbnail: '/images/berita/2.jpg'
+thumbnail: '/images/berita/3.jpg'
 tags: ['cc', 'intro']
 ---
 
