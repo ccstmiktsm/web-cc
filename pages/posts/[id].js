@@ -11,20 +11,29 @@ export async function getStaticPaths() {
     }
 }
 
-export default function Post({postData}) {
+export default function Post({ postData }) {
     return (
         <Layout>
             <Head>
                 <title>{postData.title}</title>
             </Head>
-            <div className="container">
-                <div className="col-md-8">
-                    <h2 className="mt-3">{postData.title}</h2>
-                    <Date dateString={postData.date}/> <br/>
-                    <div className="mt-4" dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
-                </div>
-            </div>
 
+            <section id="article-cc" className="article-cc bg-light">
+                <div className="container">
+                    <div className="p-3 mb-3 rounded col-md-8 offset-md-2 p-3">
+                        <h1 className="fw-bold text-capitalize" data-aos="fade-up" data-aos-delay="200">
+                            {postData.title}
+                        </h1>
+
+                        <span className="font-weight-light">
+                            <i className="date-posted"><Date dateString={postData.date} /> </i>
+                            <i className="author-text">- Oleh {postData.author} </i>
+                        </span> <br />
+
+                        <p className="text-primary mt-2" data-aos="fade-up" data-aos-delay="300" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }
@@ -34,7 +43,7 @@ export default function Post({postData}) {
 //     // yang memungkinkan untuk id
 // }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
     // Mengambil data yang dibutuhkan untuk
     // blog post menggunakan params.id
     const postData = await getPostData(params.id)
