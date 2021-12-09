@@ -1,12 +1,20 @@
-import Head from 'next/head'
 import Navbar from './navbar'
+import Nav from './globalNavbar'
 import Footer from './footer'
 
-export default function Layout({children}) {
+export default function Layout({children, home}) {
     return (
         <html>
             <body>
-                <Navbar/>   
+                {home ? (
+                    <>
+                        <Navbar/>
+                    </>
+                ) : (
+                    <>
+                        <Nav/>
+                    </>
+                )}     
                 <div>{children}</div>
                 <Footer/>
             </body>
