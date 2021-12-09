@@ -214,109 +214,19 @@ export default function Home({onlyThreePostData}) {
                                     />
                                 </div>
                             ))}
+
                             <FsLightbox
                                 toggler={lightboxController.toggler}
                                 sourceIndex={lightboxController.sourceIndex}
                                 sources={imageSources}
                             />
-                            {/* <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
 
-                            </div> */}
-
-                            {/* <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/1.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/7.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/8.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/16.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="100">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/17.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="200">
-                                <Link href="/images/galeri/1.jpg">
-                                    <a data-lightbox="gallery-cc" data-title="CCJouney">
-
-                                        <Image
-                                            className="img-fluid rounded"
-                                            src="/images/galeri/18.jpg"
-                                            alt="CCJourney"
-                                            width={350}
-                                            height={240}
-                                        />
-
-                                    </a>
-                                </Link>
-                            </div> */}
                         </div>
                         <div className="row mt-5">
                             <div className="col-12 text-center">
-                                <a href="#" className="btn btn-outline-primary shadow-none" data-aos="fade-up">Lihat Semua</a>
+                                <Link href="/galeri">
+                                    <a className="btn btn-outline-primary shadow-none" data-aos="fade-up">Lihat Semua</a>
+                                </Link>
                             </div>
                         </div>
                     </div>
